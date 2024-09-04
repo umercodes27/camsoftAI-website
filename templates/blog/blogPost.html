@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %} Blogpost{% endblock title %}
+
+{% block body %}
+
+<div class="container-fluid bg-primary py-5 bg-header mb-5">
+    <div class="row py-5">
+        <div class="col-12 text-center">
+            <h1 class="display-4 text-white animated zoomIn">Blog</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="#" class="text-white">Home</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Blog</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!-- Blog Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <!-- Blog Detail Start -->
+                <div class="mb-5">
+                    <img class="img-fluid w-100 rounded mb-5" src="{{ post.thumbnail.url }}" alt="{{ post.title }}">
+                    <h2 class="blog-post-title mb-3 text-center">{{ post.title }}</h2>
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <img class="rounded-circle me-2" src="{{ post.author_image.url }}" alt="{{ post.author }}" style="width: 50px; height: 50px;">
+                        <p class="mb-0 text-center"><small class="text-muted">{{ post.timeStamp }}</small> by <a href="/team">{{ post.author }}</a></p>
+                    </div>
+                    <div class="post-content text-center">{{ post.content | safe }}</div>
+                </div>
+                <!-- Blog Detail End -->
+                
+                <!-- Vendor Start -->
+                <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="container py-5">
+                        <div class="bg-white rounded shadow-sm p-4">
+                            <h3 class="text-center mb-4">Our Vendors</h3>
+                            <div class="owl-carousel vendor-carousel">
+                                <img src="/static/img/vendor-1.jpg" alt="Vendor 1">
+                                <img src="/static/img/vendor-2.jpg" alt="Vendor 2">
+                                <img src="/static/img/vendor-3.jpg" alt="Vendor 3">
+                                <img src="/static/img/vendor-4.jpg" alt="Vendor 4">
+                                <img src="/static/img/vendor-5.jpg" alt="Vendor 5">
+                                <img src="/static/img/vendor-6.jpg" alt="Vendor 6">
+                                <img src="/static/img/vendor-7.jpg" alt="Vendor 7">
+                                <img src="/static/img/vendor-8.jpg" alt="Vendor 8">
+                                <img src="/static/img/vendor-9.jpg" alt="Vendor 9">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Vendor End -->
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
